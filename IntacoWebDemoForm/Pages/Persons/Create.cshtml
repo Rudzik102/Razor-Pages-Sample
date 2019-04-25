@@ -1,0 +1,111 @@
+﻿@page
+@model IntacoWebDemoForm.Pages.Persons.CreateModel
+@{
+    ViewData["Title"] = "Create";
+}
+<div class="container-fluid header-wrapper p-5">
+    <h1>Lorem Ipsum</h1>
+	<h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+</div>
+<section id="singin-form" class="py-5">
+    <div class="container">
+        <div class="row text-white">
+            <div class="col-md-12 text-center">
+                <h2>Lorem ipsum</h2>
+				<h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+
+            </div>
+            <div class="col-md-6 col-sm-8 text-white">
+
+                <form method="post" OnClientClick="return false;">
+                    <div class="form-group">
+                        <label asp-for="view.Name" class="control-label"> Imię</label>
+                        <input asp-for="view.Name" class="form-control" />
+                        <span asp-validation-for="view.Name" class="text-warning"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="view.Username" class="control-label">Nazwisko</label>
+                        <input asp-for="view.Username" class="form-control" />
+                        <span asp-validation-for="view.Username" class="text-warning"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="view.E_Mail" class="control-label">Adres e-mail</label>
+                        <input asp-for="view.E_Mail" class="form-control" />
+                        <span asp-validation-for="view.E_Mail" class="text-warning"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="view.Nazwa_Instytucji" class="control-label">Nazwa Instytucji</label>
+                        <input asp-for="view.Nazwa_Instytucji" class="form-control" />
+                        <span asp-validation-for="view.Nazwa_Instytucji" class="text-warning"></span>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                            <label asp-for="view.Miejscowosc" class="control-label">Miejscowość</label>
+                            <input asp-for="view.Miejscowosc" class="form-control" />
+                            <span asp-validation-for="view.Miejscowosc" class="text-warning"></span>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <label asp-for="view.Ulica" class="control-label">Ulica</label>
+                            <input asp-for="view.Ulica" class="form-control" />
+                            <span asp-validation-for="view.Ulica" class="text-warning"></span>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-md-6 col-sm-6">
+                            <label asp-for="view.Kod_Pocztowy" class="control-label">Kod pocztowy</label>
+                            <input asp-for="view.Kod_Pocztowy" class="form-control" />
+                            <span asp-validation-for="view.Kod_Pocztowy" class="text-warning"></span>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <label asp-for="view.Telefon" class="control-label">Telefon Kontaktowy</label>
+                            <input asp-for="view.Telefon" class="form-control" />
+                            <span asp-validation-for="view.Telefon" class="text-warning"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="checkbox">
+							<label>
+								<input asp-for="view.Zgoda_Rodo" /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam at vehicula neque, et placerat nisi. In tempor eu urna et vulputate. Aliquam odio erat, malesuada nec sagittis quis, tempor ut augue. Sed efficitur arcu id sem porttitor viverra. Donec iaculis lacinia lacus vel consequat. Cras porttitor lorem ac nulla tempus sodales. Proin varius tellus sit amet viverra vehicula. Duis congue posuere aliquam. Aliquam eget justo malesuada, aliquam nisi sit amet, molestie felis.
+							</label>
+                            <span asp-validation-for="view.Zgoda_Rodo" class="text-warning"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+
+                        <div class="g-recaptcha" data-sitekey="6Le242UUAAAAAK_GXq8hm53VUmbDjRxb2HrG6cH9"></div>
+
+                        <div asp-validation-summary="ModelOnly" class="text-warning"></div>
+                    </div>
+                    <div class="row justify-content-md-center">
+                        <div class="col">
+
+                        </div>
+                        <div class="col-md-6">
+                            <button class="btn btn-warning btn-lg text-white btn-block" type="submit" onclick="this.disabled=true;this.form.submit();">Wyślij</button>
+                        </div>
+                        <div class="col">
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col">
+
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="py-5 footer-dark-bg">
+    <div class="container">
+		<p class="m-0 text-center text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam at vehicula neque, et placerat nisi. In tempor eu urna et vulputate. Aliquam odio erat, malesuada nec sagittis quis, tempor ut augue. Sed efficitur arcu id sem porttitor viverra. Donec iaculis lacinia lacus vel consequat. Cras porttitor lorem ac nulla tempus sodales. Proin varius tellus sit amet viverra vehicula. Duis congue posuere aliquam. Aliquam eget justo malesuada, aliquam nisi sit amet, molestie felis.</p>
+    </div>
+</footer>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,144 @@
+﻿@page
+@model IntacoWebDemoForm.Pages.Persons.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="accordion" id="accordionExample">
+    <div class="card">
+        <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+                <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Konta do weryfikacji.
+                </button>
+            </h5>
+        </div>
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Person[0].Name)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Person[0].Username)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Person[0].E_Mail)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Person[0].Zgoda_Rodo)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Person[0].Token)
+                            </th>
+                            <th>
+                                Adres
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var item in Model.Person.Where(n => n.verified == false))
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Username)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.E_Mail)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Zgoda_Rodo)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Token)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Miejscowosc) @Html.DisplayFor(modelItem => item.Ulica) @Html.DisplayFor(modelItem => item.Kod_Pocztowy)
+                                </td>
+                                <td>
+                                    <a asp-page="./Verify" asp-route-id="@item.ID">Verify</a>
+                                </td>
+                            </tr>
+
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+                <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Zweryfikowane konta
+                </button>
+            </h5>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Person[0].Name)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Person[0].Username)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Person[0].E_Mail)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Person[0].Zgoda_Rodo)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Person[0].Token)
+                            </th>
+                            <th>
+                                Adres
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var item in Model.Person.Where(n => n.verified == true))
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Username)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.E_Mail)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Zgoda_Rodo)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Token)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Miejscowosc) @Html.DisplayFor(modelItem => item.Ulica) @Html.DisplayFor(modelItem => item.Kod_Pocztowy)
+                                </td>
+                                <td>
+                                    <font color="#66CDAA"><i><b>Verified</b></i></font>
+                                </td>
+                            </tr>
+
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+﻿@page "{handler?}"
+@model IntacoWebDemoForm.Pages.Persons.VerifyModel
+@{
+    ViewData["Title"] = "Verify";
+}
+    <div class="jumbotron vertical-center">
+            <div class="container">
+                <dl class="dl-horizontal align-content-lg-center">
+                    <dt>
+                    <h1>Zweryfikuj podanie</h1>
+                    </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Personcs.Name)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Personcs.Username)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Personcs.Username)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Personcs.Username)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Personcs.E_Mail)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Personcs.E_Mail)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Personcs.Zgoda_Rodo)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Personcs.Zgoda_Rodo)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Personcs.Token)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Personcs.Token)
+                    </dd>
+                </dl>
+                <form method="post">
+                    <input type="hidden" asp-for="Personcs.ID" />
+                    <input type="submit" value="Usuń" asp-page-handler="Remove" class="btn btn-default" /> |
+                    <input type="submit" value="Zaakceptuj" asp-page-handler="Accept" class="btn btn-default" /> |
+                    <a asp-page="./Index">Cofnij do listy.</a>
+                </form>
+            </div>
+    </div>
+
